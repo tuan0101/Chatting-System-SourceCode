@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+
+body{
+  margin: 0;
+  padding:0;
+  background-color: #f0f2f5 !important;
+  font-family: 'Castoro', serif !important;
+}
+
+a {
+  color: black !important;
+}
+
+.app-layout{
+  padding: 0px;
+  margin: 0px;
+}
+
+.brand-logo {
+  font-family: 'Chela One', 'Grand Hotel', cursive;
+}
+
+.signin-card {
+  margin-top: 30px;
+}
+
+.auth-card{
+  padding: 20px;
+  text-align: center;
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item {
+  width: 30%;
+}
+
+.home {
+  margin: 0 1%;
+}
+
+.home-card {
+  max-width: 500px;
+  height: max-content;
+  margin: 26px auto;
+}
+
+#toast-container {
+  top: 60px;
+  right:20px;
+  left: auto !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.customActiveButton {
+  background-color: #bad5e9;
+}
+
+.customButton:hover {
+  transition: all 0.5s linear !important;
+  background-color: #bad5e9;
+}
+
+.aiModal {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 5px solid white;
+  height: 41vw;
+}
+
+.hoverEffect:hover {
+  transition: all 0.5s linear !important;
+  background-color: #bad5e9;
+}

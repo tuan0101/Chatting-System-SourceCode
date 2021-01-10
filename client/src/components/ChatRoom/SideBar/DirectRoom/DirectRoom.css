@@ -1,0 +1,64 @@
+
+.createDirectRoom :hover {
+    background-color: rgb(231, 235, 247);
+}
+
+.activeDirectRoom {
+    display: flex;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(231, 235, 247);
+}
+
+.directRoom {
+    display: flex;
+    cursor: pointer;
+    padding: 5px 1px 5px 10px;
+    border-bottom: 1px dotted #797979;
+    background-color: rgb(247, 255, 244);
+}
+
+.directRoomInfo {
+    position: relative;
+    flex: 1;
+}
+
+.directRoomInfo > h4 {
+    position: absolute;
+    top: -5px;
+    left: -60px;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(51, 207, 51);
+    text-shadow: 0 0 10px #FF0000, 0 0 10px #04c52e;
+    -webkit-text-stroke: 1px rgb(2, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.directRoomInfo > h3 {
+    font-size: 22px;
+    color: black;
+}
+
+.directRoomInfo > p {
+    position: relative;
+    font-size: 14px;
+    font-style: italic;
+    color: black;
+    z-index: 10;
+    opacity: 1;
+    top: -5px;
+    margin-bottom: -5px;
+}
+
+.directRoomInfo > small {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: black;
+}
+
+.tab-pane {
+    margin-bottom: -5px;
+    border-bottom: none;
+}

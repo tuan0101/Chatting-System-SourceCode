@@ -1,0 +1,250 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex: 0.99;
+    /* padding-bottom: 10px; */
+    /* height: 1; */
+}
+
+.chatHeader {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    height: 80px;
+}
+
+.headerInfo {
+    flex: 1;
+    padding-left: 20px;
+    width: 99%;
+    margin-top: 20px;
+}
+
+.headerInfo > h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.headerInfo > p {
+    color: gray;
+
+}
+
+.headerInfo > h6, small {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.headerRight {
+    display: inline-block;
+    position: relative;
+    right: 10px;
+    color: gray;
+    
+}
+
+.headerRight > i {
+    padding-right: 7px;
+}
+
+.headerRight > i:hover{
+    cursor: pointer;
+}
+
+.fa-eye-slash {
+    opacity: 0.1;
+}
+
+.fa-eye-slash:hover  span {
+    display: flex;
+}
+
+.fa-trash-alt {
+    margin-left: 7px;
+}
+
+
+.fa-trash-alt > span {
+    position: absolute;
+    left: 17px;
+    top: -20px;
+    display: none;
+}
+
+.fa-trash-alt:hover  span {
+    display: flex;
+}
+
+.chatBody {
+    position: relative;
+    flex: 1;
+    /* flex-direction: column-reverse; */
+    background-image: url("https://utemplates.net/wp-content/uploads/2017/07/White-Textured-Background.jpg"); 
+    padding: 30px;
+    background-attachment: local;
+    background-position: center;
+    overflow: auto;    
+    box-shadow: 1px 2px 3px 0px rgb(112, 112, 112);
+}
+
+.chatBody::-webkit-scrollbar {
+    display: none;
+}
+
+
+.chatName {
+    position: relative;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.userList {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background-color: rgb(225, 228, 233);
+    border: 2px rgb(165, 154, 154) solid;
+    min-width: 100px;
+    width: fit-content;
+    color: black;
+
+}
+
+.userList > p{
+    border-bottom: 1px lightblue solid;
+    margin: 0px;
+    font-weight: 700;
+    padding: 5px 20px 5px 5px;
+}
+
+.userList > p:hover{
+    cursor: pointer;
+    background-color: rgb(143, 176, 236);
+}
+
+.timeStamp {
+    margin-left: 5px;
+    font-size: xx-small;
+}
+
+.chatMessage {
+    display: flex;
+    height: auto;
+    position: relative;
+    font-size: 16px;
+    padding: 2px 10px 0px 10px;
+    max-width: 350px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.myMessage {
+    width: fit-content;  
+    margin-left: auto;
+    
+}
+
+.chatMessage > img {
+    position: relative;
+    top: -10px;
+}
+
+.messageHeader {
+    position: relative;
+    padding-left: 0px;
+    top: -25px;
+    right: -10px;
+}
+
+.myMessage > div > .messageContent {
+    background-color: rgb(220, 248, 198) !important;
+}
+
+
+.chatMessage > div > .messageContent {  
+    background-color: rgb(221, 221, 221);  
+}
+
+.messageContent {
+    position: relative;
+    bottom: 25px;
+    padding: 2px 10px 0px 10px; 
+    border-radius: 10px;
+    right: -5px;
+}
+
+.chatFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+}
+
+.emojiPicker {
+    position: absolute;
+    bottom: 62px;
+    border: 2px #585555 solid;
+    border-radius: 5px;
+}
+
+.emoji {
+    position: relative;
+    bottom: 0px;
+}
+.chatFooter > form {
+    flex: 1;
+    display: flex;  
+}
+
+.chatFooter > form > input{
+    flex: 1;
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+    outline-width: 0;
+    color: #3f3f3f;
+    background: lightgray;
+}
+
+.chatFooter > form > p{
+    flex: 1;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+/* .emoji-picker-container {
+    flex: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+} */
+
+
+.chatFooter > form >  button{  
+    display: none;
+}
+
+.chatFooter > i {
+    padding: 10px;
+    color: gray; 
+}
+
+.chatFooter > i:hover{
+    cursor: pointer;
+}
+
+
+.chatFooter > .fakeEmoIcon {
+    opacity: 0;
+}
+
+.fakeNavBarIcon {
+    display: none;
+}

@@ -1,0 +1,76 @@
+.chatRoom {
+    display: flex;
+    height: 89vh;
+    width: inherit;
+    /* height: 1; */
+    /* overflow: scroll; */
+    position: fixed;
+    flex: 1;
+}
+
+@media screen and (max-width:750px){
+    .sideBar {
+        /* display: none; */
+        position: absolute;
+        right: 2px;
+        top: 80px;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0.0);
+        transition: transform 0.3s ease-in;
+        transform-origin: top right;
+        z-index: 1000;
+    }
+
+    /* SLIDE bar */
+    .slideBar {
+        transform: scale(0.8);
+    }
+
+    .sideHeader {
+        background-color: lightgray;
+    }
+
+    .chat{
+        flex: 1;
+        margin-left: 5px;
+    }
+
+    .navBarIcon{
+        display: flex;
+        margin-left: 5px;
+        color: gray;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 12px;
+        opacity: 0;
+    }
+
+    .fakeNavBarIcon {
+        display: flex;
+        margin-left: 5px;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .chatHeader {
+        display: flex;
+    }
+    .headerInfo {
+
+        position: relative;
+        left: -35px;
+        transform: scale(0.7);
+    }
+
+    .headerInfo h3 {
+        font-size: 30px;
+    }
+
+    .headerInfo > small, h6 {
+        display: inline;
+    }
+
+
+}

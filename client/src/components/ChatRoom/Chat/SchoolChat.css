@@ -1,0 +1,138 @@
+.schoolChat {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    background-color: rgba(184, 178, 178, 0.4);
+    border: rgba(255, 255, 255, 0.7) 1.5px solid;
+    position: fixed;
+    left: 62%;
+    right: 5%;
+    top: 15%;
+    margin-left: 50px;
+}
+
+.schoolChatBody {
+    flex: 1;
+    /* flex-direction: column-reverse; */
+    padding: 20px 10px 10px 10px;
+    overflow: auto;    
+    box-shadow: 1px 2px 3px 0px rgb(112, 112, 112); 
+}
+
+.schoolChatBody > .myMessage > div > .messageContent {
+    background-color: rgba(103, 212, 19, 0.3) !important;
+}
+
+.schoolChatBody > .chatMessage {
+    max-width: 290px;
+    /* color: white !important; */
+}
+
+.schoolChatBody > .chatMessage > img{
+    border: 1.5px solid #ffffff;
+}
+.schoolChatBody > .chatMessage > div > .messageContent {  
+    background-color: rgba(29, 24, 24, 0.3);  
+    color: white;
+}
+
+.schoolChatBody::-webkit-scrollbar {
+    display: none;
+}
+
+.chatSchoolFooter {
+    border-left: none;
+}
+
+.chatSchoolFooter > form > input{
+    border: lightgreen 1px solid;
+}
+
+.chatSchoolFooter > i {
+    padding: 10px;
+    color: rgb(238, 231, 231);
+    
+}
+
+.schoolChatIcon {
+    display: none !important;
+    color: white;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    
+}
+
+.fa-microphone {
+    opacity: 0;
+}
+
+
+@media screen and (max-width:800px){
+    .responsiveSchoolChat {
+        display: none !important;
+    }
+
+    .schoolChat {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:700px){
+    .responsiveSchoolChat {
+        display: none !important;
+    }
+    .schoolChat {
+        display: flex;
+        
+        border: rgba(0, 0, 0, 0.7) 4px solid;
+        left: 12%;
+        right: 5%;
+        top: 15%;
+        margin-left: 50px;
+    }
+
+    .schoolChatBody {
+        background-image: url("https://utemplates.net/wp-content/uploads/2017/07/White-Textured-Background.jpg"); 
+        overflow: auto;    
+        border-bottom: 1px solid rgb(156, 153, 153);
+    }
+
+    .chatSchoolFooter {
+        background-color: rgb(243, 237, 237);
+    }
+
+    .justify-content-center {
+        margin: 0px 0px;
+    }
+
+    .schoolChatIcon {
+        color: black;
+        display: block !important;
+        position: fixed;
+        padding: 5px;
+        margin-left: 5px;
+        right: 90px;
+        top: 20px;
+        z-index: 100000;
+    }
+
+    /* .schoolFeed {
+        display: flex !important;
+    } */
+
+    .chatFooter > i {
+        color: gray;
+
+    }
+
+    .fa-microphone {
+        opacity: 0;
+    }
+}
+

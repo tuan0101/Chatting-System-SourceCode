@@ -11,35 +11,7 @@ function Chart() {
     const [clickCounts, setClickCount] = useState();
     const [clickCounts2, setClickCount2] = useState();
 
-
-    const { state, dispatch } = useContext(UserContext);
-
-
-    const chartData = {
-        labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
-        datasets: [
-            {
-                label: 'Population',
-                data: [
-                    617594,
-                    181045,
-                    153060,
-                    106519,
-                    105162,
-                    95072
-                ],
-                // backgroundColor: [
-                //     'rgba(255, 99, 132, 0.6)',
-                //     'rgba(54, 162, 235, 0.6)',
-                //     'rgba(255, 206, 86, 0.6)',
-                //     'rgba(75, 192, 192, 0.6)',
-                //     'rgba(153, 102, 255, 0.6)',
-                //     'rgba(255, 159, 64, 0.6)',
-                //     'rgba(255, 99, 132, 0.6)'
-                // ]
-            }
-        ]
-    }
+    const { state } = useContext(UserContext);
 
     const getProfileClick = (userid) => {
         axios.get(`http://localhost:5000/user/${userid}`, {
@@ -97,8 +69,6 @@ function Chart() {
             setClickCount(clickChartDate);
             setClickCount2(clickChartDate2);
         }
-        console.log('clickChartDate', clickChartDate);
-        console.log('chartData', chartData);
     }, [clickDates])
 
     return (

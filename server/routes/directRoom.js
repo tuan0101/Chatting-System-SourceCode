@@ -2,20 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const DirectRooms = mongoose.model("directrooms");
-// const Pusher = require('pusher');
 
-// const pusher = new Pusher({
-//     appId: '1080334',
-//     key: 'cb908631b197c8834d00',
-//     secret: '7a2a4f6e5cf55520809d',
-//     cluster: 'us2',
-//     useTLS: true
-// });
-
-// const db = mongoose.connection;
-// db.once("open", () => {
-
-// });
 
 router.get('/directrooms/sync', (req, res) => {
     DirectRooms.find({ participants: { $in: req.query.userID } })
@@ -28,7 +15,6 @@ router.get('/directrooms/sync', (req, res) => {
         })
 })
 
-// create a new direct room
 router.post('/directrooms/new', (req, res) => {
     const dbRoom = req.body;
     DirectRooms.create(dbRoom, (err, data) => {
@@ -40,7 +26,6 @@ router.post('/directrooms/new', (req, res) => {
     })
 })
 
-// checking
 router.get('/directrooms/check', (req, res) => {
     DirectRooms.find({ roomID: req.query.roomID })
         .populate("participants", "_id name")

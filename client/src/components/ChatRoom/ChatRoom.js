@@ -14,10 +14,8 @@ export default function ChatRoom() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState([]);
   const [roomID, setRoomID] = useState([]);
-  const [endTime, setEndTime] = useState(0);
   const { state, dispatch } = useContext(UserContext);
   const { paramID } = useParams();
-
 
   const initialState = {
     roomID: "",
@@ -102,12 +100,11 @@ export default function ChatRoom() {
 
   }, [state, newMessage])
 
-
   // Get all the messages belong to this roomID
   // can be either Live Rroom or Direct Room
   const getRoomMessages = (roomID) => {
     if (roomID) {
-      axios.get(`http://localhost:5000/messages/sync?roomID=${roomID}`) // roomID
+      axios.get(`http://localhost:5000/messages/sync?roomID=${roomID}`)
         .then((response) => {
           setMessages(response.data);
         })
@@ -148,20 +145,13 @@ export default function ChatRoom() {
     }
   }
 
-
   /* prevent trigger NOTIF twice when opening two servers */
   useEffect(() => {
-    let start = performance.now();
-    let _time = start - endTime;
-    console.log('_time', _time);
-    setEndTime(start);
-    if (_time > 150) {
-      if (state && (state._id !== undefined)) {
-        if (newMessage.sender === state._id) // to run only once
-          notifyReceiver(newMessage);
-        if (newMessage.receiverID === state._id) {
-          setNotif(newMessage);
-        }
+    if (state && (state._id !== undefined)) {
+      if (newMessage.sender === state._id) // to run only once
+        notifyReceiver(newMessage);
+      if (newMessage.receiverID === state._id) {
+        setNotif(newMessage);
       }
     }
   }, [newMessage])
@@ -203,16 +193,8 @@ export default function ChatRoom() {
     // this pusher is created only once compared to when creating outside the function
     const pusher = new Pusher('cb908631b197c8834d00', { cluster: 'us2' });
 
-    const mesChannel = pusher.subscribe('messages'); // messages channel
+    const mesChannel = pusher.subscribe('messages');
     mesChannel.bind('newMessage', (newMessage) => {
-      // This line is much more cleaner, but
-      // it's going to render for the room that doesn't even contain this message
-      //setMessages(messages => [...messages, newMessage]);
-
-      // An alternative way is to use pusher with dependency in useEffect(), but
-      // it will subscribe and ubsubscribe channel all the time => heavy performance
-
-      // instead save the new message first, then make it becomes an dependency in useEffect
       // the setMessage() will be updated again every time the newMessage changes
       setTimeout(() => {
         setNewMessage(newMessage);
@@ -220,7 +202,7 @@ export default function ChatRoom() {
 
     });
 
-    const roomChannel = pusher.subscribe('liveRooms'); // live room channel
+    const roomChannel = pusher.subscribe('liveRooms');
     roomChannel.bind('newRoom', (newRoom) => {
       getRooms();
     });
@@ -234,7 +216,7 @@ export default function ChatRoom() {
 
     });
 
-    const directChannel = pusher.subscribe('directRooms'); // live room channel
+    const directChannel = pusher.subscribe('directRooms');
     directChannel.bind('deleteDR', (roomDelete) => {
       state && getDirectRooms(state._id);
     });
